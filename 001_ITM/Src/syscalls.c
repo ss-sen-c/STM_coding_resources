@@ -58,8 +58,8 @@
 
 // SEN Manual change for ITM START
 // Implementation of printf like feature using ARM Cortex M3/M4/ ITM functionality
-// This function will not work for ARM Cortex M0/M0+
 // For Cortex M0, use semihosting feature of openOCD
+// SEN Manual change for ITM STOP
 
 
 //Debug Exception and Monitor Control Register base address
@@ -84,7 +84,6 @@ void ITM_SendChar(uint8_t ch)
 	//Write to ITM stimulus port0
 	ITM_STIMULUS_PORT0 = ch;
 }
-// SEN Manual change for ITM STOP
 
 /* Variables */
 //#undef errno

@@ -6,9 +6,12 @@
   * @brief   Default main function.
   ******************************************************************************
 */
-#include <stdio.h>
+// SEN Manual change for ITM START
+#include<stdio.h>
 int main(void)
 {
-	printf("hello using ITM\n");
+	// SEN Manual change for ITM START
+	printf("Hello using ITM\n");
+
 	for(;;);
 }
