@@ -23,21 +23,21 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-001_ITM.elf \
+002_Basics.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-001_ITM.list \
+002_Basics.list \
 
 
 # All Target
-all: 001_ITM.elf secondary-outputs
+all: 002_Basics.elf secondary-outputs
 
 # Tool invocations
-001_ITM.elf: $(OBJS) $(USER_OBJS) C:\Users\1994s\STM32CubeIDE\GIT\STM_coding_resources\001_ITM\STM32F446RETX_FLASH.ld
-	arm-none-eabi-gcc -o "001_ITM.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\1994s\STM32CubeIDE\GIT\STM_coding_resources\001_ITM\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001_ITM.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+002_Basics.elf: $(OBJS) $(USER_OBJS) C:\Users\1994s\STM32CubeIDE\workspace_1.0.2\002_Basics\STM32F446RETX_FLASH.ld
+	arm-none-eabi-gcc -o "002_Basics.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\1994s\STM32CubeIDE\workspace_1.0.2\002_Basics\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="002_Basics.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -46,8 +46,8 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-001_ITM.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "001_ITM.list"
+002_Basics.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "002_Basics.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
